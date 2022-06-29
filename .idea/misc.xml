@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/iliy_/AndroidStudioProjects/MyApplication5/app/src/main/res/drawable/rounded_search.xml" value="0.1785" />
+        <entry key="..\:/Users/iliy_/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/activity_main.xml" value="0.2653985507246377" />
+        <entry key="..\:/Users/iliy_/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/converter_screen.xml" value="0.33" />
+        <entry key="..\:/Users/iliy_/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/currency_item.xml" value="0.33" />
+        <entry key="..\:/Users/iliy_/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_converter_screen.xml" value="0.33" />
+        <entry key="..\:/Users/iliy_/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_crypto_screen.xml" value="0.2882298424467099" />
+        <entry key="..\:/Users/iliy_/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_currencies_screen.xml" value="0.19230769230769232" />
+        <entry key="..\:/Users/iliy_/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_details_about_currency.xml" value="0.2653985507246377" />
+        <entry key="..\:/Users/iliy_/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_details_screen.xml" value="0.33" />
+        <entry key="..\:/Users/iliy_/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_splash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/iliy_/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/splash_screen.xml" value="0.2653985507246377" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/drawable/ic_arrow_back.xml" value="0.179" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/drawable/ic_arrow_right.xml" value="0.179" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.179" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.179" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/drawable/ic_currency_exchange.xml" value="0.179" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/drawable/ic_eye.xml" value="0.179" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/drawable/ic_language.xml" value="0.179" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/drawable/ic_pageview.xml" value="0.179" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/drawable/rounded_search.xml" value="0.179" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/drawable/ss.xml" value="0.179" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/layout/activity_main.xml" value="0.2653985507246377" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/layout/activity_settings.xml" value="0.2653985507246377" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/layout/activity_splash.xml" value="0.2653985507246377" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/layout/currency_item.xml" value="0.2957345971563981" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/layout/fragment_currencies_screen.xml" value="0.25" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/layout/fragment_details_screen.xml" value="0.22" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/layout/fragment_settings.xml" value="0.2653985507246377" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/layout/fragment_splash.xml" value="0.2653985507246377" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/layout/fragment_splash_screen.xml" value="0.2653985507246377" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/layout/item_currency.xml" value="0.2653985507246377" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/layout/settings_activity.xml" value="0.2653985507246377" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/layout/splash_activity.xml" value="0.2653985507246377" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/menu/sort_menu.xml" value="0.28888888888888886" />
+        <entry key="..\:/Users/iliy_/Desktop/MyApplication5/app/src/main/res/xml/root_preferences.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

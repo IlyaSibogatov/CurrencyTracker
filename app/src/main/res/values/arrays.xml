@@ -1,0 +1,17 @@
+<resources>
+    <string-array name="language_entries">
+        <item>RU</item>
+        <item>ENG</item>
+    </string-array>
+
+    <string-array name="show_entries">
+        <item>All</item>
+        <item>Crypto</item>
+        <item>Fiat</item>
+    </string-array>
+
+    <string-array name="list_entries">
+        <item>Linear</item>
+        <item>Grid</item>
+    </string-array>
+</resources>

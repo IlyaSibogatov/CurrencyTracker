@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Currency Tracker</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- My strings -->
+    <string name="settings">Настройки</string>
+    <string name="details">Детали</string>
+    <string name="currency">Валюта</string>
+    <string name="threedots">...</string>
+    <string name="char_code">Символ</string>
+    <string name="type">Тип</string>
+    <string name="rate_to_usd">Курс к доллару</string>
+    <string name="currency_tracker_splash">Currency Tracker</string>
+    <string name="currency_name">Currency name</string>
+    <string name="asc_list">А-Я</string>
+    <string name="desc_list">Я-А</string>
+    <string name="variable_language">Язык</string>
+    <string name="dark_theme">Темная тема</string>
+    <string name="show">Показывать</string>
+    <string name="list_format">Отображение списка</string>
+    <string name="about_app">О приложении</string>
+    <string name="theme">Тема</string>
+    <string name="displaying">Отображение</string>
+
+</resources>

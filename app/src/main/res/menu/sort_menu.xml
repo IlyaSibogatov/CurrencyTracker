@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <group android:id="@+id/sorting">
+        <item
+            android:id="@+id/asc_list"
+            android:title="@string/asc_list"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/desc_list"
+            android:title="@string/desc_list"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/settings_activity"
+            android:title="@string/settings"
+            app:showAsAction="never" />
+    </group>
+
+</menu>
