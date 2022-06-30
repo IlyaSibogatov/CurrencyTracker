@@ -3,10 +3,10 @@ package com.example.myapplication.activities
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivitySplashBinding
@@ -20,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
         get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        loadTheme()
+        loadDefaultTheme()
         super.onCreate(savedInstanceState)
         _binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -40,13 +40,13 @@ class SplashActivity : AppCompatActivity() {
         }, 1500)
     }
 
-    private fun loadTheme() {
+    private fun loadDefaultTheme() {
         val sharedPreferences = getSharedPreferences("Setting", Activity.MODE_PRIVATE)
         val enableNightTheme = sharedPreferences.getBoolean("My_theme", SHARED_THEME_ON)
-        setTheme(enableNightTheme)
+        setDefaultTheme(enableNightTheme)
     }
 
-    private fun setTheme(enableNightTheme: Boolean) {
+    private fun setDefaultTheme(enableNightTheme: Boolean) {
         when (enableNightTheme) {
             false -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)

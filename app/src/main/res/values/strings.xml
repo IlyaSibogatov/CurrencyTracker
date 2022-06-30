@@ -37,5 +37,15 @@
     <string name="theme">Theme</string>
     <string name="displaying">Displaying</string>
 
+    <string name="RU">RU</string>
+    <string name="ENG">ENG</string>
+
+    <string name="All">All</string>
+    <string name="Crypto">Crypto</string>
+    <string name="Fiat">Fiat</string>
+
+    <string name="Linear">Linear</string>
+    <string name="Grid">Grid</string>
+
 
 </resources>

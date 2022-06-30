@@ -10,7 +10,7 @@
             app:title="@string/dark_theme" />
         <ListPreference
             app:defaultValue="ENG"
-            app:entries="@array/language_entries"
+            app:entries="@array/language_values"
             app:entryValues="@array/language_entries"
             app:key="language"
             app:title="@string/variable_language"
@@ -21,7 +21,7 @@
         android:title="@string/displaying">
         <ListPreference
             app:defaultValue="All"
-            app:entries="@array/show_entries"
+            app:entries="@array/show_values"
             app:entryValues="@array/show_entries"
             app:key="show"
             app:title="@string/show"
@@ -29,7 +29,7 @@
 
         <ListPreference
             app:defaultValue="Linear"
-            app:entries="@array/list_entries"
+            app:entries="@array/list_values"
             app:entryValues="@array/list_entries"
             app:key="list_format"
             app:title="@string/list_format"
@@ -43,7 +43,7 @@
             android:title="GitHub">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://github.com/GansA11es" />
+                android:data="https://github.com/GansA11es/CurrencyTracker" />
         </Preference>
 
     </PreferenceCategory>

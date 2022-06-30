@@ -34,9 +34,9 @@ class DetailsFragment : Fragment(R.layout.fragment_details_screen) {
             }
         }
 
-        viewModel.currency.observe(viewLifecycleOwner){
+        viewModel.currency.observe(viewLifecycleOwner) {
             binding.itemIntegratedName.text = it.symbol
-            if (it.currencySymbol.isNullOrEmpty()){
+            if (it.currencySymbol.isNullOrEmpty()) {
                 binding.itemCharCode.visibility = View.GONE
                 binding.itemIntegratedCharCode.visibility = View.GONE
             } else {
@@ -44,14 +44,17 @@ class DetailsFragment : Fragment(R.layout.fragment_details_screen) {
                 binding.itemIntegratedCharCode.visibility = View.VISIBLE
                 binding.itemIntegratedCharCode.text = it.currencySymbol
             }
-            binding.itemIntegratedType.text = it.type
+            when (it.type) {
+                TYPE_CRYPTO -> binding.itemIntegratedType.text = getString(R.string.Crypto)
+                TYPE_FIAT -> binding.itemIntegratedType.text = getString(R.string.Fiat)
+            }
             binding.itemIntegratedValue.text = decimalFormat.format(it.rateUsd.toFloat())
         }
     }
 
     private fun initViewModel(id: String) {
         val viewModelFactory = DetailsViewModelFactory(id)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(DetailsViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory)[DetailsViewModel::class.java]
     }
 
     override fun onDestroyView() {
@@ -60,8 +63,10 @@ class DetailsFragment : Fragment(R.layout.fragment_details_screen) {
     }
 
     companion object {
-        val decimalFormat = DecimalFormat("#.#####")
+        private val decimalFormat = DecimalFormat("#.#####")
         private const val ARGUMENT_ID = "ARGUMENT_ID"
         private const val INVALID_ID = -1
+        private const val TYPE_CRYPTO = "crypto"
+        private const val TYPE_FIAT = "fiat"
     }
 }

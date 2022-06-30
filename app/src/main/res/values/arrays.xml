@@ -4,14 +4,30 @@
         <item>ENG</item>
     </string-array>
 
+    <string-array name="language_values">
+        <item>@string/RU</item>
+        <item>@string/ENG</item>
+    </string-array>
+
     <string-array name="show_entries">
         <item>All</item>
         <item>Crypto</item>
         <item>Fiat</item>
     </string-array>
 
+    <string-array name="show_values">
+        <item>@string/All</item>
+        <item>@string/Crypto</item>
+        <item>@string/Fiat</item>
+    </string-array>
+
     <string-array name="list_entries">
         <item>Linear</item>
         <item>Grid</item>
+    </string-array>
+
+    <string-array name="list_values">
+        <item>@string/Linear</item>
+        <item>@string/Grid</item>
     </string-array>
 </resources>

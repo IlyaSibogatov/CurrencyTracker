@@ -37,4 +37,15 @@
     <string name="theme">Тема</string>
     <string name="displaying">Отображение</string>
 
+    <string name="RU">Русский</string>
+    <string name="ENG">Английский</string>
+
+    <string name="All">Все</string>
+    <string name="Crypto">Крипто</string>
+    <string name="Fiat">Фиат</string>
+
+    <string name="Linear">Список</string>
+    <string name="Grid">Сетка</string>
+
+
 </resources>
