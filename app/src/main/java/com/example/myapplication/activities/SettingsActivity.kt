@@ -1,11 +1,11 @@
 package com.example.myapplication.activities
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceFragmentCompat
@@ -24,6 +24,7 @@ class SettingsActivity : AppCompatActivity(),
         get() = _binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        loadLanguage()
         super.onCreate(savedInstanceState)
         _binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -35,10 +36,7 @@ class SettingsActivity : AppCompatActivity(),
         }
         binding.apply {
             btn_back.setOnClickListener {
-                PreferenceManager.getDefaultSharedPreferences(this@SettingsActivity)
-                    .unregisterOnSharedPreferenceChangeListener(this@SettingsActivity)
-                val intent = Intent(getKoin().get(), MainActivity::class.java)
-                startActivity(intent)
+                onBackPressed()
             }
         }
         PreferenceManager.getDefaultSharedPreferences(this)
@@ -52,14 +50,14 @@ class SettingsActivity : AppCompatActivity(),
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-        if (key == "language") {
-            when (sharedPreferences?.getString(key, SHARED_LANGUAGE)) {
-                "RU" -> setLocale("ru")
-                "ENG" -> setLocale("en")
+        if (key == LANGUAGE_KEY) {
+            when (sharedPreferences?.getString(key, EN_LOCALE)) {
+                RU_LOCALE -> setLocale(RU_LOCALE)
+                EN_LOCALE -> setLocale(EN_LOCALE)
             }
         }
-        if (key == "theme") {
-            when (sharedPreferences?.getBoolean(key, SHARED_THEME_ON)) {
+        if (key == THEME_KEY) {
+            when (sharedPreferences?.getBoolean(key, SHARED_THEME_ON)!!) {
                 false -> {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                     saveTheme(false)
@@ -68,19 +66,33 @@ class SettingsActivity : AppCompatActivity(),
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                     saveTheme(true)
                 }
-                null -> Toast.makeText(
-                    this,
-                    "Something went wrong",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
             }
         }
     }
 
+    override fun onBackPressed() {
+        PreferenceManager.getDefaultSharedPreferences(this@SettingsActivity)
+            .unregisterOnSharedPreferenceChangeListener(this@SettingsActivity)
+        val intent = Intent(getKoin().get(), MainActivity::class.java)
+        startActivity(intent)
+        finish()
+        super.onBackPressed()
+    }
+
+    private fun loadLanguage() {
+        val sharedPreferences = getSharedPreferences(SETTINGS_BUNDLE, Activity.MODE_PRIVATE)
+        val language = sharedPreferences.getString(SETTINGS_LANGUAGE, EN_LOCALE)
+
+        val locale = Locale(language!!)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.locale = locale
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+    }
+
     private fun saveTheme(nightTheme: Boolean) {
-        val editor = getSharedPreferences("Setting", Context.MODE_PRIVATE).edit()
-        editor.putBoolean("My_theme", nightTheme)
+        val editor = getSharedPreferences(SETTINGS_BUNDLE, Context.MODE_PRIVATE).edit()
+        editor.putBoolean(SETTINGS_THEME, nightTheme)
         editor.apply()
     }
 
@@ -92,13 +104,19 @@ class SettingsActivity : AppCompatActivity(),
         baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
         recreate()
 
-        val editor = getSharedPreferences("Setting", Context.MODE_PRIVATE).edit()
-        editor.putString("My_lang", lang)
+        val editor = getSharedPreferences(SETTINGS_BUNDLE, Context.MODE_PRIVATE).edit()
+        editor.putString(SETTINGS_LANGUAGE, lang)
         editor.apply()
     }
 
     companion object {
         private const val SHARED_THEME_ON = false
-        private const val SHARED_LANGUAGE = "ENG"
+        private const val LANGUAGE_KEY = "language"
+        private const val RU_LOCALE = "ru"
+        private const val EN_LOCALE = "en"
+        private const val THEME_KEY = "theme"
+        private const val SETTINGS_BUNDLE = "Settings"
+        private const val SETTINGS_LANGUAGE = "My_lang"
+        private const val SETTINGS_THEME = "My_theme"
     }
 }

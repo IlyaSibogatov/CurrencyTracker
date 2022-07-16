@@ -1,7 +1,7 @@
 <resources>
     <string-array name="language_entries">
-        <item>RU</item>
-        <item>ENG</item>
+        <item>ru</item>
+        <item>en</item>
     </string-array>
 
     <string-array name="language_values">

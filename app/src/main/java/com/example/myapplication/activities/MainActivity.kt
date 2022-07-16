@@ -4,43 +4,31 @@ import android.app.Activity
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import com.example.myapplication.databinding.ActivityMainBinding
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    private var _binding: ActivityMainBinding? = null
+
+    private lateinit var _binding: ActivityMainBinding
     private val binding
-        get() = _binding!!
+        get() = _binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        loadSettings()
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 
-    private fun loadSettings() {
-        val sharedPreferences = getSharedPreferences("Setting", Activity.MODE_PRIVATE)
-        val enableNightTheme = sharedPreferences.getBoolean("My_theme", SHARED_THEME_ON)
-        val language = sharedPreferences.getString("My_lang", SHARED_LANGUAGE)
-        setLocale(language!!)
-        setTheme(enableNightTheme)
+    override fun onResume() {
+        loadLanguage()
+        super.onResume()
     }
 
-    private fun setTheme(enableNightTheme: Boolean) {
-        when (enableNightTheme) {
-            false -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            }
-            true -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }
-        }
-    }
+    private fun loadLanguage() {
+        val sharedPreferences = getSharedPreferences(SETTINGS_BUNDLE, Activity.MODE_PRIVATE)
+        val language = sharedPreferences.getString(SETTINGS_LANGUAGE, GET_LANGUAGE)
 
-    private fun setLocale(lang: String) {
-        val locale = Locale(lang)
+        val locale = Locale(language!!)
         Locale.setDefault(locale)
         val config = Configuration()
         config.locale = locale
@@ -48,7 +36,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val SHARED_THEME_ON = false
-        private const val SHARED_LANGUAGE = "ENG"
+        private const val GET_LANGUAGE = "en"
+        private const val SETTINGS_BUNDLE = "Settings"
+        private const val SETTINGS_LANGUAGE = "My_lang"
     }
 }

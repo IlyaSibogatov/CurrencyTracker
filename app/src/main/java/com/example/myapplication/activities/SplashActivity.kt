@@ -15,9 +15,9 @@ import com.example.myapplication.fragments.splashscreen.SplashFragment
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
 
-    private var _binding: ActivitySplashBinding? = null
+    private lateinit var _binding: ActivitySplashBinding
     private val binding
-        get() = _binding!!
+        get() = _binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         loadDefaultTheme()
@@ -41,8 +41,8 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun loadDefaultTheme() {
-        val sharedPreferences = getSharedPreferences("Setting", Activity.MODE_PRIVATE)
-        val enableNightTheme = sharedPreferences.getBoolean("My_theme", SHARED_THEME_ON)
+        val sharedPreferences = getSharedPreferences(SETTINGS_BUNDLE, Activity.MODE_PRIVATE)
+        val enableNightTheme = sharedPreferences.getBoolean(SETTINGS_THEME, SHARED_THEME_ON)
         setDefaultTheme(enableNightTheme)
     }
 
@@ -59,5 +59,7 @@ class SplashActivity : AppCompatActivity() {
 
     companion object {
         private const val SHARED_THEME_ON = false
+        private const val SETTINGS_BUNDLE = "Settings"
+        private const val SETTINGS_THEME = "My_theme"
     }
 }

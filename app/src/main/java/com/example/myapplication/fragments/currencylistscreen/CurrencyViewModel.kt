@@ -3,9 +3,9 @@ package com.example.myapplication.fragments.currencylistscreen
 import android.widget.Toast
 import androidx.lifecycle.*
 import com.example.myapplication.api.ListCurrency
-import com.example.myapplication.repositories.CurrencyRepository
 import com.example.myapplication.db.CurrencyEntity
 import com.example.myapplication.di.DependencyStorage
+import com.example.myapplication.repositories.CurrencyRepository
 import com.example.myapplication.utils.MyUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -54,8 +54,8 @@ class CurrencyViewModel(
                 showTypeLiveData.switchMap {
                     when (it) {
                         ShowedType.ALL -> currencyRepository.getCurrenciesAsc()
-                        ShowedType.CRYPTO -> currencyRepository.getCurrencyByTypeAsc("crypto")
-                        ShowedType.FIAT -> currencyRepository.getCurrencyByTypeAsc("fiat")
+                        ShowedType.CRYPTO -> currencyRepository.getCurrencyByTypeAsc(TYPE_CRYPTO)
+                        ShowedType.FIAT -> currencyRepository.getCurrencyByTypeAsc(TYPE_FIAT)
                     }
                 }
             }
@@ -63,8 +63,8 @@ class CurrencyViewModel(
                 showTypeLiveData.switchMap {
                     when (it) {
                         ShowedType.ALL -> currencyRepository.getCurrenciesDesc()
-                        ShowedType.CRYPTO -> currencyRepository.getCurrencyByTypeDesc("crypto")
-                        ShowedType.FIAT -> currencyRepository.getCurrencyByTypeDesc("fiat")
+                        ShowedType.CRYPTO -> currencyRepository.getCurrencyByTypeDesc(TYPE_CRYPTO)
+                        ShowedType.FIAT -> currencyRepository.getCurrencyByTypeDesc(TYPE_FIAT)
                     }
                 }
             }
@@ -114,5 +114,7 @@ class CurrencyViewModel(
 
     companion object {
         private const val EMPTY_QUERY = ""
+        private const val TYPE_CRYPTO = "crypto"
+        private const val TYPE_FIAT = "fiat"
     }
 }

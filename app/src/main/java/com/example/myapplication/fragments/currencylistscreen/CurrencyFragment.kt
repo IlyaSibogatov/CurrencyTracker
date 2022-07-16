@@ -57,7 +57,6 @@ class CurrencyFragment : Fragment(R.layout.fragment_currencies_screen),
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
 
         initViewModel()
-        loadSettings()
 
         binding.apply {
 
@@ -96,31 +95,11 @@ class CurrencyFragment : Fragment(R.layout.fragment_currencies_screen),
         subscribeToCurrencies()
     }
 
-    private fun loadSettings() {
-        sharedLayoutManager = sharedPreferences.getString("list_format", SHARED_LAYOUT_MANAGER)!!
-        rvNote.adapter = rvAdapter
-        when (sharedLayoutManager) {
-            "Linear" -> rvNote.layoutManager = LinearLayoutManager(requireContext())
-            "Grid" -> rvNote.layoutManager = GridLayoutManager(requireContext(), SPAN_COUNT)
-        }
-        sharedCurrencyType = sharedPreferences.getString("show", SHARED_CURRENCY_TYPE)!!
-        when (sharedCurrencyType) {
-            "All" -> viewModel.setShowType(ShowedType.ALL)
-            "Crypto" -> viewModel.setShowType(ShowedType.CRYPTO)
-            "Fiat" -> viewModel.setShowType(ShowedType.FIAT)
-        }
-    }
-
     private fun subscribeToCurrencies() {
         currencyLiveData?.removeObserver(observer)
         currencyLiveData = viewModel.currencies.also {
             it.observe(viewLifecycleOwner, observer)
         }
-    }
-
-    private fun initViewModel() {
-        val viewModelFactory = CurrencyViewModelFactory()
-        viewModel = ViewModelProvider(this, viewModelFactory)[CurrencyViewModel::class.java]
     }
 
     private fun refreshData() {
@@ -133,9 +112,29 @@ class CurrencyFragment : Fragment(R.layout.fragment_currencies_screen),
         controller.navigate(R.id.action_currencyFragment_to_detailsFragment, bundle)
     }
 
+    private fun initViewModel() {
+        val viewModelFactory = CurrencyViewModelFactory()
+        viewModel = ViewModelProvider(this, viewModelFactory)[CurrencyViewModel::class.java]
+    }
+
     override fun onResume() {
         loadSettings()
         super.onResume()
+    }
+
+    private fun loadSettings() {
+        sharedLayoutManager = sharedPreferences.getString(LIST_FORMAT_KEY, GET_LINEAR)!!
+        rvNote.adapter = rvAdapter
+        when (sharedLayoutManager) {
+            GET_LINEAR -> rvNote.layoutManager = LinearLayoutManager(requireContext())
+            GET_GRID -> rvNote.layoutManager = GridLayoutManager(requireContext(), SPAN_COUNT)
+        }
+        sharedCurrencyType = sharedPreferences.getString(SHOW_KEY, SHOW_ALL)!!
+        when (sharedCurrencyType) {
+            SHOW_ALL -> viewModel.setShowType(ShowedType.ALL)
+            SHOW_CRYPTO -> viewModel.setShowType(ShowedType.CRYPTO)
+            SHOW_FIAT -> viewModel.setShowType(ShowedType.FIAT)
+        }
     }
 
     override fun onDestroyView() {
@@ -157,6 +156,7 @@ class CurrencyFragment : Fragment(R.layout.fragment_currencies_screen),
                     getKoin().get(),
                     SettingsActivity::class.java
                 )
+                activity?.finish()
                 startActivity(intent)
             }
         }
@@ -164,9 +164,14 @@ class CurrencyFragment : Fragment(R.layout.fragment_currencies_screen),
     }
 
     companion object {
+        private const val LIST_FORMAT_KEY = "list_format"
+        private const val GET_LINEAR = "Linear"
+        private const val GET_GRID = "Grid"
+        private const val SHOW_KEY = "show"
+        private const val SHOW_ALL = "All"
+        private const val SHOW_CRYPTO = "Crypto"
+        private const val SHOW_FIAT = "Fiat"
         private const val SPAN_COUNT = 2
-        private const val SHARED_CURRENCY_TYPE = "All"
-        private const val SHARED_LAYOUT_MANAGER = "Linear"
         private const val ARGUMENT_ID = "ARGUMENT_ID"
     }
 }

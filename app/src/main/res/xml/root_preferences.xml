@@ -1,15 +1,14 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory
-        android:title="@string/theme">
+    <PreferenceCategory android:title="@string/theme">
         <SwitchPreferenceCompat
             app:key="theme"
             app:switchTextOff="Switch off"
             app:switchTextOn="Switch on"
             app:title="@string/dark_theme" />
         <ListPreference
-            app:defaultValue="ENG"
+            app:defaultValue="en"
             app:entries="@array/language_values"
             app:entryValues="@array/language_entries"
             app:key="language"
@@ -17,8 +16,7 @@
             app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/displaying">
+    <PreferenceCategory android:title="@string/displaying">
         <ListPreference
             app:defaultValue="All"
             app:entries="@array/show_values"
@@ -36,8 +34,7 @@
             app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/about_app">
+    <PreferenceCategory android:title="@string/about_app">
         <Preference
             android:layout_height="match_parent"
             android:title="GitHub">
