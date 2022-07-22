@@ -100,19 +100,23 @@ class CurrencyViewModel(
                 override fun onFailure(call: Call<ListCurrency>, t: Throwable) {
                     Toast.makeText(
                         getKoin().get(),
-                        "Something went wrong",
+                        FAILURE_MESSAGE,
                         Toast.LENGTH_LONG
-                    )
-                        .show()
+                    ).show()
                 }
             })
         } else {
-            Toast.makeText(getKoin().get(), "No internet connection", Toast.LENGTH_LONG)
-                .show()
+            Toast.makeText(
+                getKoin().get(),
+                NO_INTERNET_CONNECTION_MESSAGE,
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 
     companion object {
+        private const val NO_INTERNET_CONNECTION_MESSAGE = "No internet connection"
+        private const val FAILURE_MESSAGE = "Something went wrong"
         private const val EMPTY_QUERY = ""
         private const val TYPE_CRYPTO = "crypto"
         private const val TYPE_FIAT = "fiat"

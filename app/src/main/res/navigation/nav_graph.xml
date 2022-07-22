@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_currencyFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_currencyFragment_to_converterFragment"
+            app:destination="@id/converterFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
@@ -20,6 +23,15 @@
         tools:layout="@layout/fragment_details_screen">
         <action
             android:id="@+id/action_detailsFragment_to_currencyFragment"
+            app:destination="@id/currencyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/converterFragment"
+        android:name="com.example.myapplication.fragments.converter.ConverterFragment"
+        android:label="ConverterFragment"
+        tools:layout="@layout/fragment_converter">
+        <action
+            android:id="@+id/action_converterFragment_to_currencyFragment"
             app:destination="@id/currencyFragment" />
     </fragment>
 

@@ -9,17 +9,16 @@ import android.view.inputmethod.InputMethodManager
 import android.view.inputmethod.InputMethodManager.HIDE_NOT_ALWAYS
 
 
-class MyUtils {
-    companion object {
-        fun isInternetAvailable(context: Context): Boolean {
-            (context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager).run {
-                return this.getNetworkCapabilities(this.activeNetwork)?.hasCapability(
-                    NetworkCapabilities.NET_CAPABILITY_INTERNET
-                ) ?: false
-            }
+object MyUtils {
+
+    fun isInternetAvailable(context: Context): Boolean {
+        (context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager).run {
+            return this.getNetworkCapabilities(this.activeNetwork)?.hasCapability(
+                NetworkCapabilities.NET_CAPABILITY_INTERNET
+            ) ?: false
         }
     }
-}
 
-fun View.hideKeyboard() = (context.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager)
-    .hideSoftInputFromWindow(windowToken, HIDE_NOT_ALWAYS)
+    fun View.hideKeyboard() = (context.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager)
+        .hideSoftInputFromWindow(windowToken, HIDE_NOT_ALWAYS)
+}

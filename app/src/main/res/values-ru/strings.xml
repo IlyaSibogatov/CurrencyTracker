@@ -20,11 +20,20 @@
     <!-- My strings -->
     <string name="settings">Настройки</string>
     <string name="details">Детали</string>
+    <string name="converter">Конвертер</string>
+    <string name="from">Из</string>
+    <string name="to">В</string>
+    <string name="choose_currency">Выберите валюту</string>
+    <string name="enter_count">Введите количество</string>
+    <string name="convert">Конвертировать</string>
+    <string name="result">Результат</string>
     <string name="currency">Валюта</string>
     <string name="threedots">...</string>
     <string name="char_code">Символ</string>
     <string name="type">Тип</string>
     <string name="rate_to_usd">Курс к доллару</string>
+    <string name="rate_to_eur">Курс к евро</string>
+    <string name="rate_to_rub">Курс к рублю</string>
     <string name="currency_tracker_splash">Currency Tracker</string>
     <string name="currency_name">Currency name</string>
     <string name="asc_list">А-Я</string>
@@ -47,5 +56,7 @@
     <string name="Linear">Список</string>
     <string name="Grid">Сетка</string>
 
+    <string name="same_currencies_selected">"Выбраны одинаковые валюты"</string>
+    <string name="null_enter_value">"Количество валюты не введено"</string>
 
 </resources>

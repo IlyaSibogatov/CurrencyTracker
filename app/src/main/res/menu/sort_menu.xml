@@ -15,6 +15,11 @@
             app:showAsAction="never" />
 
         <item
+            android:id="@+id/converter"
+            android:title="@string/converter"
+            app:showAsAction="never" />
+
+        <item
             android:id="@+id/settings_activity"
             android:title="@string/settings"
             app:showAsAction="never" />

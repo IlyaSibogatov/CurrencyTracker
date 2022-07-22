@@ -31,6 +31,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details_screen) {
         binding.apply {
             btn_back.setOnClickListener {
                 controller.popBackStack()
+                onDestroy()
             }
         }
 
@@ -49,6 +50,20 @@ class DetailsFragment : Fragment(R.layout.fragment_details_screen) {
                 TYPE_FIAT -> binding.itemIntegratedType.text = getString(R.string.Fiat)
             }
             binding.itemIntegratedValue.text = decimalFormat.format(it.rateUsd.toFloat())
+
+            viewModel.setRates(it.rateUsd.toFloat())
+
+            viewModel.eu.observe(viewLifecycleOwner) {
+                viewModel.getRates(it.rateUsd.toFloat()).also {
+                    binding.itemIntegratedValueEu.text = decimalFormat.format(it)
+                }
+            }
+
+            viewModel.ru.observe(viewLifecycleOwner) {
+                viewModel.getRates(it.rateUsd.toFloat()).also {
+                    binding.itemIntegratedValueRu.text = decimalFormat.format(it)
+                }
+            }
         }
     }
 

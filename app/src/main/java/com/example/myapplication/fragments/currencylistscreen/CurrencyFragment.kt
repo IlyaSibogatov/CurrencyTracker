@@ -21,7 +21,7 @@ import com.example.myapplication.R
 import com.example.myapplication.activities.SettingsActivity
 import com.example.myapplication.databinding.FragmentCurrenciesScreenBinding
 import com.example.myapplication.db.CurrencyEntity
-import com.example.myapplication.utils.hideKeyboard
+import com.example.myapplication.utils.MyUtils.hideKeyboard
 import kotlinx.android.synthetic.main.fragment_currencies_screen.*
 import org.koin.android.ext.android.getKoin
 
@@ -158,6 +158,9 @@ class CurrencyFragment : Fragment(R.layout.fragment_currencies_screen),
                 )
                 activity?.finish()
                 startActivity(intent)
+            }
+            R.id.converter -> {
+                controller.navigate(R.id.action_currencyFragment_to_converterFragment)
             }
         }
         return true

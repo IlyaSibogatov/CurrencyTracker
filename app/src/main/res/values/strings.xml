@@ -20,15 +20,27 @@
     <!-- My strings -->
     <string name="settings">Settings</string>
     <string name="details">Details</string>
+    <string name="converter">Converter</string>
     <string name="currency">Currency</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="choose_currency">Choose currency</string>
+    <string name="enter_count">Enter count</string>
+    <string name="convert">Convert</string>
+    <string name="result">Result</string>
     <string name="threedots">...</string>
     <string name="char_code">Char code</string>
     <string name="type">Type</string>
+
     <string name="rate_to_usd">Rate to USD</string>
+    <string name="rate_to_eur">Rate to EUR</string>
+    <string name="rate_to_rub">Rate to RUB</string>
+
     <string name="currency_tracker_splash">Currency Tracker</string>
     <string name="currency_name">Currency name</string>
     <string name="asc_list">A-Z</string>
     <string name="desc_list">Z-A</string>
+
     <string name="variable_language">Language</string>
     <string name="dark_theme">Dark theme</string>
     <string name="show">Show</string>
@@ -47,5 +59,7 @@
     <string name="Linear">Linear</string>
     <string name="Grid">Grid</string>
 
+    <string name="same_currencies_selected">"Selected the same currencies"</string>
+    <string name="null_enter_value">"Enter the number"</string>
 
 </resources>

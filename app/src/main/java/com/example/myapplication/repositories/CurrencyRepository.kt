@@ -2,8 +2,8 @@ package com.example.myapplication.repositories
 
 import com.example.myapplication.api.Api
 import com.example.myapplication.api.ListCurrency
-import com.example.myapplication.db.MyDao
 import com.example.myapplication.db.CurrencyEntity
+import com.example.myapplication.db.MyDao
 import retrofit2.Callback
 
 class CurrencyRepository(
@@ -30,4 +30,8 @@ class CurrencyRepository(
     fun getCurrencyFromDaoById(id: String) = myDao.getCurrencyById(id)
 
     fun searchCurrency(query: String) = myDao.searchCurrency(query)
+
+    fun getCurrencyBySymbol(symbol: String) = myDao.getCurrencyBySymbol(symbol)
+
+    fun getAll() = myDao.getAll()
 }

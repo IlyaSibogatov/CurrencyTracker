@@ -11,7 +11,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
@@ -49,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="15dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -60,11 +59,11 @@
 
                     <TextView
                         android:id="@+id/item_name"
+                        style="@style/textColor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:text="@string/currency"
-                        style="@style/textColor"
                         android:textSize="24sp" />
 
                     <TextView
@@ -139,21 +138,74 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingTop="8dp"
+                    android:paddingTop="15dp"
                     android:paddingBottom="8dp">
 
                     <TextView
-                        android:id="@+id/item_value"
+                        style="@style/textColor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:text="@string/rate_to_usd"
-                        style="@style/textColor"
                         android:textSize="24sp" />
 
                     <TextView
                         style="@style/textColor"
                         android:id="@+id/item_integrated_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="@string/threedots"
+                        android:textSize="24sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        style="@style/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/rate_to_eur"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        style="@style/textColor"
+                        android:id="@+id/item_integrated_value_eu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="@string/threedots"
+                        android:textSize="24sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        style="@style/textColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/rate_to_rub"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        style="@style/textColor"
+                        android:id="@+id/item_integrated_value_ru"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"

@@ -27,6 +27,13 @@ interface MyDao {
     @Query("SELECT * FROM currencies WHERE id=:id")
     fun getCurrencyById(id: String): LiveData<CurrencyEntity>
 
+    @Query("SELECT * FROM currencies WHERE symbol=:symbol")
+    fun getCurrencyBySymbol(symbol: String): CurrencyEntity
+
     @Query("SELECT * FROM currencies WHERE id LIKE '%' || :query || '%' OR symbol LIKE '%' || :query || '%'")
+
     fun searchCurrency(query: String): LiveData<List<CurrencyEntity>>
+
+    @Query("SELECT * FROM currencies ORDER BY symbol ASC")
+    fun getAll(): List<CurrencyEntity>
 }
