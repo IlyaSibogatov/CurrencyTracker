@@ -52,8 +52,9 @@ class ConverterViewModel(
     }
 
     fun getResult(count: String): String {
-        result =
-            decimalFormat.format(firstCurrencies * count.toFloat() / secondCurrencies).toString()
+        result = decimalFormat.format(
+            firstCurrencies * count.toFloat() / secondCurrencies
+        ).toString()
         return "$count $firstSymbol = $result $secondSymbol"
     }
 

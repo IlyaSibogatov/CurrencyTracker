@@ -48,13 +48,13 @@ class ConverterFragment : Fragment(R.layout.fragment_converter) {
                         context!!.getString(R.string.same_currencies_selected),
                         Toast.LENGTH_SHORT
                     ).show()
-
                 } else if (enterCount.text.isEmpty()) {
                     Toast.makeText(
                         getKoin().get(),
                         context!!.getString(R.string.null_enter_value),
                         Toast.LENGTH_SHORT
                     ).show()
+                    result.text = CLEAR_RESULT
                 } else {
                     result.text = viewModel.getResult(enterCount.text.toString())
                 }
@@ -89,7 +89,6 @@ class ConverterFragment : Fragment(R.layout.fragment_converter) {
                 ) {
                     viewModel.setRate(FIRST_RATE, position)
                 }
-
                 override fun onNothingSelected(parent: AdapterView<*>?) {
                 }
             })
@@ -102,7 +101,6 @@ class ConverterFragment : Fragment(R.layout.fragment_converter) {
                 ) {
                     viewModel.setRate(SECOND_RATE, position)
                 }
-
                 override fun onNothingSelected(parent: AdapterView<*>?) {
                 }
             })
@@ -120,6 +118,7 @@ class ConverterFragment : Fragment(R.layout.fragment_converter) {
     }
 
     companion object {
+        private const val CLEAR_RESULT = ""
         private const val FIRST_RATE = 1
         private const val SECOND_RATE = 2
     }
