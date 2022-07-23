@@ -78,33 +78,35 @@ class CurrencyViewModel(
 
     fun getApiRequest() {
         if (MyUtils.isInternetAvailable(getKoin().get())) {
-            currencyRepository.getCurrenciesFromApi(object : Callback<ListCurrency> {
+            viewModelScope.launch(Dispatchers.IO) {
+                currencyRepository.getCurrenciesFromApi(object : Callback<ListCurrency> {
 
-                override fun onResponse(
-                    call: Call<ListCurrency>,
-                    response: Response<ListCurrency>
-                ) {
-                    response.body()?.let { responseBody ->
-                        if (responseBody.data.isNotEmpty()) {
-                            viewModelScope.launch(Dispatchers.IO) {
-                                currencyRepository.insertCurrencyToDao(
-                                    DependencyStorage.Mappers.mappers.toDaoList(
-                                        responseBody
+                    override fun onResponse(
+                        call: Call<ListCurrency>,
+                        response: Response<ListCurrency>
+                    ) {
+                        response.body()?.let { responseBody ->
+                            if (responseBody.data.isNotEmpty()) {
+                                viewModelScope.launch(Dispatchers.IO) {
+                                    currencyRepository.insertCurrencyToDao(
+                                        DependencyStorage.Mappers.mappers.toDaoList(
+                                            responseBody
+                                        )
                                     )
-                                )
+                                }
                             }
                         }
                     }
-                }
 
-                override fun onFailure(call: Call<ListCurrency>, t: Throwable) {
-                    Toast.makeText(
-                        getKoin().get(),
-                        FAILURE_MESSAGE,
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-            })
+                    override fun onFailure(call: Call<ListCurrency>, t: Throwable) {
+                        Toast.makeText(
+                            getKoin().get(),
+                            FAILURE_MESSAGE,
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                })
+            }
         } else {
             Toast.makeText(
                 getKoin().get(),
