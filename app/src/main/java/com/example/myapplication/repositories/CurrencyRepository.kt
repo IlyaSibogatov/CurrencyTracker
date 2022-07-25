@@ -31,7 +31,5 @@ class CurrencyRepository(
 
     fun searchCurrency(query: String) = myDao.searchCurrency(query)
 
-    fun getCurrencyBySymbol(symbol: String) = myDao.getCurrencyBySymbol(symbol)
-
     fun getAll() = myDao.getAll()
 }

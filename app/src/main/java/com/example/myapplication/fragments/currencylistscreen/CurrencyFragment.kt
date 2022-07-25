@@ -75,7 +75,7 @@ class CurrencyFragment : Fragment(R.layout.fragment_currencies_screen),
                         viewModel.setSortOrder(viewModel.oldSortOrder)
                         viewModel.setShowType(viewModel.oldShowType)
                     } else {
-                        newText.toString().also { viewModel.query = it }
+                        "$newText".also { viewModel.query = it }
                         viewModel.setSortOrder(SortOrder.SEARCH)
                     }
                     return false
