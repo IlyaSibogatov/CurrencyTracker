@@ -44,7 +44,7 @@ class CurrencyFragment : Fragment(R.layout.fragment_currencies_screen),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        rvAdapter = CurrencyAdapter(layoutInflater, this)
+        rvAdapter = CurrencyAdapter(this)
         sharedPreferences = PreferenceManager
             .getDefaultSharedPreferences(getKoin().get())
         setHasOptionsMenu(true)

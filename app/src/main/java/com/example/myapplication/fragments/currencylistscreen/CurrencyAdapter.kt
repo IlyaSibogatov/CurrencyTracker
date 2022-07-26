@@ -9,7 +9,6 @@ import com.example.myapplication.databinding.ItemCurrencyBinding
 import com.example.myapplication.db.CurrencyEntity
 
 class CurrencyAdapter(
-    private val layoutInflater: LayoutInflater,
     private val listener: OnCurrencyClickListener
 ) : RecyclerView.Adapter<CurrencyAdapter.CurrencyViewHolder>() {
 
@@ -38,7 +37,8 @@ class CurrencyAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CurrencyViewHolder {
-        val binding = ItemCurrencyBinding.inflate(layoutInflater, parent, false)
+        val binding =
+            ItemCurrencyBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CurrencyViewHolder(binding)
     }
 
