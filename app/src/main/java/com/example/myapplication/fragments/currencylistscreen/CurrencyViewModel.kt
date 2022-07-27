@@ -1,6 +1,5 @@
 package com.example.myapplication.fragments.currencylistscreen
 
-import android.widget.Toast
 import androidx.lifecycle.*
 import com.example.myapplication.api.ListCurrency
 import com.example.myapplication.db.CurrencyEntity
@@ -97,28 +96,14 @@ class CurrencyViewModel(
                             }
                         }
                     }
-
                     override fun onFailure(call: Call<ListCurrency>, t: Throwable) {
-                        Toast.makeText(
-                            getKoin().get(),
-                            FAILURE_MESSAGE,
-                            Toast.LENGTH_LONG
-                        ).show()
                     }
                 })
             }
-        } else {
-            Toast.makeText(
-                getKoin().get(),
-                NO_INTERNET_CONNECTION_MESSAGE,
-                Toast.LENGTH_LONG
-            ).show()
         }
     }
 
     companion object {
-        private const val NO_INTERNET_CONNECTION_MESSAGE = "No internet connection"
-        private const val FAILURE_MESSAGE = "Something went wrong"
         private const val EMPTY_QUERY = ""
         private const val TYPE_CRYPTO = "crypto"
         private const val TYPE_FIAT = "fiat"

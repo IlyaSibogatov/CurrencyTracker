@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
@@ -21,9 +22,11 @@ import com.example.myapplication.R
 import com.example.myapplication.activities.SettingsActivity
 import com.example.myapplication.databinding.FragmentCurrenciesScreenBinding
 import com.example.myapplication.db.CurrencyEntity
+import com.example.myapplication.utils.MyUtils
 import com.example.myapplication.utils.MyUtils.hideKeyboard
 import kotlinx.android.synthetic.main.fragment_currencies_screen.*
 import org.koin.android.ext.android.getKoin
+import org.koin.java.KoinJavaComponent
 
 class CurrencyFragment : Fragment(R.layout.fragment_currencies_screen),
     CurrencyAdapter.OnCurrencyClickListener {
@@ -103,6 +106,7 @@ class CurrencyFragment : Fragment(R.layout.fragment_currencies_screen),
     }
 
     private fun refreshData() {
+        checkInternetConnection()
         viewModel.getApiRequest()
     }
 
@@ -110,6 +114,16 @@ class CurrencyFragment : Fragment(R.layout.fragment_currencies_screen),
         val bundle = Bundle()
         bundle.putString(ARGUMENT_ID, id)
         controller.navigate(R.id.action_currencyFragment_to_detailsFragment, bundle)
+    }
+
+    private fun checkInternetConnection() {
+        if (!MyUtils.isInternetAvailable(KoinJavaComponent.getKoin().get())) {
+            Toast.makeText(
+                getKoin().get(),
+                context!!.getString(R.string.no_internet_connection_message),
+                Toast.LENGTH_LONG
+            ).show()
+        }
     }
 
     private fun initViewModel() {
