@@ -3,26 +3,26 @@
 The purpose of this project:
 To create a mobile application that allows the user to view the current exchange rate, as well as to consolidate the practical programming skills for Android OS in the Android Studio development environment.
 The requirements for the application under development:
-	- Use of lists;
-	- The presence of multiple screens;
-	- The presence of a settings screen;
-	- Using an API;
-	- Use of the database.
+- Use of lists;
+- The presence of multiple screens;
+- The presence of a settings screen;
+- Using an API;
+- Use of the database.
 
 
 
 Translated with www.DeepL.com/Translator (free version)
 
 # The project used:
-MVVM pattern;
-Dependency injection (Koin);
-Room;
-Retrofit;
-Custom SplashScreen;
-Navigation fragment;
-SharedPreferences;
-Coroutines;
-LiveData.
+- MVVM pattern;
+- Dependency injection (Koin);
+- Room;
+- Retrofit;
+- Custom SplashScreen;
+- Navigation fragment;
+- SharedPreferences;
+- Coroutines;
+- LiveData.
 
 # Screens
 # Splash screen
