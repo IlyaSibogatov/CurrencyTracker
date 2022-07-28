@@ -9,8 +9,6 @@ The requirements for the application under development:
 - Using an API;
 - Use of the database.
 
-
-
 Translated with www.DeepL.com/Translator (free version)
 
 # The project used:
@@ -60,8 +58,8 @@ Converter screen, displays two lists of currencies, a line to enter the amount o
 Settings screen, displays a list of settings available to the user, such as changing the application theme, language, display the currency list on the Home screen, etc.
 
 # Difficulties in development:
-I could not implement a widget using a database to track a specific currency;
-Few user-friendly api.
+- I could not implement a widget using a database to track a specific currency;
+- Few user-friendly api.
 
 # The API used
 https://api.coincap.io/
