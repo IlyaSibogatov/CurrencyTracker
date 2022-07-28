@@ -1,7 +1,6 @@
 # CurrencyTracker
 
 # The project used:
-___
 MVVM pattern;
 Dependency injection (Koin);
 Room;
@@ -13,7 +12,6 @@ Coroutines;
 LiveData.
 
 # Screens
-___
 Splash fragment
 ![image](https://user-images.githubusercontent.com/95710591/181475247-34bbcb9d-338a-4406-aec9-0762c5573d11.png)
 The loading screen required for visual smoothing application startup.
@@ -41,5 +39,4 @@ I could not implement a widget using a database to track a specific currency;
 Few user-friendly api.
 
 # The API used
-___
 https://api.coincap.io/
