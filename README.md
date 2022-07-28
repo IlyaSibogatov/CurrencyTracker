@@ -1,6 +1,6 @@
 # CurrencyTracker
 
-#the project used:
+# The project used:
 ___
 MVVM pattern;
 Dependency injection (Koin);
@@ -12,7 +12,7 @@ SharedPreferences;
 Coroutines;
 LiveData.
 
-#Screens
+# Screens
 ___
 Splash fragment
 ![image](https://user-images.githubusercontent.com/95710591/181475247-34bbcb9d-338a-4406-aec9-0762c5573d11.png)
@@ -36,10 +36,10 @@ Settings fragment
 ![image](https://user-images.githubusercontent.com/95710591/181475748-0e071de3-e49d-4c91-8cb6-f2966f775665.png)
 Settings screen, displays a list of settings available to the user, such as changing the application theme, language, display the currency list on the Home screen, etc.
 
-Difficulties in development:
+# Difficulties in development:
 I could not implement a widget using a database to track a specific currency;
 Few user-friendly api.
 
-The API used
+# The API used
 ___
 https://api.coincap.io/
