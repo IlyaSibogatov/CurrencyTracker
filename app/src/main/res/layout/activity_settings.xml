@@ -1,56 +1,51 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/Theme.MyApplication">
 
-    <data>
-
-    </data>
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        style="@style/AppBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:theme="@style/Theme.MyApplication">
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
 
-        <com.google.android.material.appbar.AppBarLayout
-            style="@style/AppBar"
-            android:id="@+id/app_bar_layout"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/void_clr"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow_back" />
 
-                <ImageButton
-                    app:layout_constraintEnd_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:id="@+id/btn_back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/void_clr"
-                    app:srcCompat="@drawable/ic_arrow_back" />
+            <TextView
+                style="@style/AppBarColorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="@string/settings"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </com.google.android.material.appbar.MaterialToolbar>
 
-                <TextView
-                    style="@style/AppBarColorText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:text="@string/settings"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-            </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
-        </com.google.android.material.appbar.AppBarLayout>
+    <FrameLayout
+        android:id="@+id/settings"
+        style="@style/detailsSettingsBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-        <LinearLayout
-            style="@style/detailsSettingsBackground"
-            android:id="@+id/settings"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-</layout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

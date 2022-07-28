@@ -8,9 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivitySplashBinding
-import com.example.myapplication.fragments.splashscreen.SplashFragment
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -24,13 +22,6 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        if (savedInstanceState == null) {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.splash, SplashFragment())
-                .commit()
-        }
 
         val handler = Handler(Looper.getMainLooper())
         handler.postDelayed({
