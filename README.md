@@ -9,8 +9,6 @@ The requirements for the application under development:
 - Using an API;
 - Use of the database.
 
-Translated with www.DeepL.com/Translator (free version)
-
 # The project used:
 - MVVM pattern;
 - Dependency injection (Koin);
